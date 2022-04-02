@@ -3,9 +3,6 @@ import os
 import numpy
 from copy import deepcopy
 
-#Toimiv pilt: C:\Users\karva\Documents\KOOL\UT\pildid ja kaskaadid\test\T1.jpg
-#image_path = (r"C:\Users\karva\Documents\KOOL\UT\pildid ja kaskaadid\test\T1.jpg")
-
 def board_detection(image_path):
     detected_coordinates = []#Koordinaatide hulk
     
@@ -14,9 +11,9 @@ def board_detection(image_path):
 
     image_grey = cv2.cvtColor(original_image, cv2.COLOR_RGB2GRAY)
 
-    whitechecker_classifier = cv2.CascadeClassifier(r"C:\Users\karva\Documents\KOOL\UT\pildid ja kaskaadid\praktika pildid\valgekabend\classifier\vkabend.xml")
-    blackchecker_classifier = cv2.CascadeClassifier(r"C:\Users\karva\Documents\KOOL\UT\pildid ja kaskaadid\praktika pildid\mustkabend\classifier\mkabend.xml")
-    checkerboard_classifier = cv2.CascadeClassifier(r"C:\Users\karva\Documents\KOOL\UT\pildid ja kaskaadid\praktika pildid\kabelaud\classifier\kabelaud.xml")
+    whitechecker_classifier = cv2.CascadeClassifier(r"") #kirjuta siia valge kabendi kaskaadklassifitseerija faili asukoht
+    blackchecker_classifier = cv2.CascadeClassifier(r"") #kirjuta siia musta kabendi kaskaadklassifitseerija faili asukoht
+    checkerboard_classifier = cv2.CascadeClassifier(r"") #kirjuta siia kabelaua kaskaadklassifitseerija faili asukoht
 
     detected_whitecheckers = whitechecker_classifier.detectMultiScale(image_grey, minSize=(50, 50))
     detected_blackcheckers = blackchecker_classifier.detectMultiScale(image_grey, minSize=(50, 50))
@@ -111,7 +108,7 @@ def board_detection(image_path):
         for piece in pieces:
             board[piece[0]][piece[1]] = piece
     
-    #Kuvab tuvastatud nupud ja laua vaheaknas
+    #Kui soovid kuvada tuvastatud nupud ja laua vaheaknas, eemalda järgmiste ridade eest "#" märgid.
     #cv2.namedWindow(window_name, cv2.WINDOW_KEEPRATIO)
     #cv2.imshow(window_name, original_image)
     #salvestus
