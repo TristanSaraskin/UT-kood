@@ -4,7 +4,7 @@ from pathlib import Path
 import os
 
 def main():
-    picture_directory = (r'C:\Users\karva\Documents\KOOL\UT\pildid ja kaskaadid\test')
+    picture_directory = (r'')#Kirjuta siia selle kausta asukoht, kus asub pildifail, millelt soovid kabeseisu tuvastada.
     files = Path(picture_directory).glob('*')
     for file in files:
         detection_file = str(file)
