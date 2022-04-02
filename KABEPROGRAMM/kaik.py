@@ -100,18 +100,3 @@ def evaluation(laud):
                     n_black += 1
     dif = n_white - n_black
     return dif
-
-#TEST
-
-#board = board_detection()[0]
-
-#for tulp in board:
-#    print(tulp)
-#print(" ")
-
-#lauad = possible_moves(board, "white")
-
-#for ld in lauad:
-#    for tulp in ld:
-#        print(tulp)
-#    print(" ") 
