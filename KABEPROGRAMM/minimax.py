@@ -28,12 +28,3 @@ def minimax(position, depth, max_player):
                 best_move = move
         
         return minEval, best_move
-
-#TEST
-
-#laud = minimax(board_detection(r"C:\Users\karva\Documents\KOOL\UT\pildid ja kaskaadid\test\T1.jpg"), 3, True)[1]
-#hind = minimax(board_detection(r"C:\Users\karva\Documents\KOOL\UT\pildid ja kaskaadid\test\T1.jpg"), 3, True)[0]
-
-#print(hind)
-#for tulp in laud:
-    #print(tulp)
